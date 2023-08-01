@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;700&display=swap');
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  background-color: rgb(248, 246, 247);
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+}
+
+a {
+  color: var(--white);
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+a:hover {
+  background: var(--backgroud-five);
+  transition: 0.3s;
+}
+
+img {max-width: 100%;}
+
+:root {
+  --white: #fff;
+  --color-one: #FE775Ad4;
+  --color-two: rgb(221, 2, 2);
+  --color-three: #000;
+  --color-four: #333333;
+  --color-six: rgba(255, 255, 255, 0.8);
+  --color-eight: #cccccc;
+  --backgroud: #e2e3e9;
+  --backgroud-one: #23232e;
+  --backgroud-two: rgba(0, 0, 0, 0.55);
+  --backgroud-three: rgb(221, 2, 2);
+  --backgroud-five: rgba(0, 0, 0, 0.09);
+  --backgroud-six: rgba(255, 255, 255, 0.8);
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--backgroud-one);
+  border-radius: 20px;
+  border: 3px solid var(--color-one);
+}
+::-webkit-scrollbar-track {
+  background: var(--color-one);
+}
+
+
+/*============================================================================================================= 
+HEADER
+=============================================================================================================*/
+
+#logo {
+  font-weight: bold;
+  background: transparent;
+}
+
+.flex{
+  box-sizing: border-box;
+  height: 70px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+}
+
+header{
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  transition: .5s;
+  padding: 0.313rem 0.625rem;
+}
+
+header a{
+  font-weight: 600;
+}
+
+header a:hover {
+  color: var(--color-one);
+}
+
+header i{
+  font-size: 1.563rem;
+  color: var(--color-one);
+}
+
+header.rolagem{
+  background: var(--backgroud-one);
+  padding: 0;
+}
+
+header.rolagem a{
+  color: var(--white);
+}
+
+header.rolagem a:hover {
+  color: var(--color-one);
+}
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#menu {
+display: flex;
+list-style: none;
+gap: 0.5rem;
+}
+
+#menu a {
+display: block;
+padding: 0.7rem;
+}
+
+#btn-mobile {
+display: none;
+}
+
+header h1{
+  display: none;
+  margin: 1rem 0.5rem;
+}
+
+@media (max-width: 1024px) {
+#menu {
+  display: block;
+  position: fixed;
+  width: 100%;
+  top: 70px;
+  right: 0px;
+  background: var(--backgroud-one);
+  transition: 0.6s;
+  z-index: 1000;
+  height: 0px;
+  visibility: hidden;
+  overflow-y: hidden;
+  text-align: center;
+}
+
+header h1{
+  display: block;
+}
+
+#header #nav.active {
+  background: var(--backgroud-one);
+  border-radius: 10%;
+}
+
+#nav.active #menu {
+  height: calc(100vh - 70px);
+  visibility: visible;
+  /* overflow-y: auto; */
+}
+
+#btn-mobile {
+  display: flex;
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+#menu a {
+  padding: 1.5rem 0;
+  margin-inline: 1rem;
+  border-bottom: 0.0625rem solid var(--color-two);
+  border-radius: 0;
+}
+
+#hamburger {
+  border-top: 2px solid;
+  width: 20px;
+  color: var(--white);
+}
+
+#hamburger:hover{
+  color: var(--color-one);
+}
+
+header.rolagem #hamburger{
+  color: var(--white);
+}
+
+header.rolagem #hamburger:hover{
+  color: var(--color-one);
+}
+
+#hamburger::after,
+#hamburger::before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  margin-top: 5px;
+  transition: 0.3s;
+  position: relative;
+}
+#nav.active #hamburger {
+  border-top-color: transparent;
+
+}
+#nav.active #hamburger::before {
+  transform: rotate(135deg);
+}
+#nav.active #hamburger::after {
+  transform: rotate(-135deg);
+  top: -7px;
+}
+}
+
+@media (max-width: 400px){
+
+  header i{
+    font-size: 1.2rem;
+  }
+
+}
+
+@media (max-width: 185px){
+
+  header i{
+    font-size: 1rem;
+  }
+
+}
+
+
+/*=========================================================================================================== 
+CONTANT        
+===========================================================================================================*/
+
+/*------------------------- Section1-Introducao ----------------------*/
+
+#slider {
+  min-width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#slider img{
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  transition: opacity 500ms;
+  filter: brightness(40%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#slider img.selected { 
+  opacity: 1;
+}
+
+#slider main {
+  position: relative;
+  left: 15%;
+  transform: translateY(50%);
+  color: var(--white);
+  height: 50%;
+  max-width: 70%;
+}
+
+#slider main h1 {
+  font-family: 'Poppins';
+  font-weight: bold;
+  font-size: clamp(1.4rem, 9vw, 6rem);
+  color: var(--white);
+}
+
+#slider main p {
+  font-family: 'Open Sans';
+  font-size: clamp(0.85rem, 4vw, 1.4rem);
+  max-width: 56rem;
+}
+
+#section1-button{
+  font-family: 'Poppins';
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 500;
+  /* line-height: 24px; */
+  color: var(--color-three);
+  background: var(--color-one);
+  padding: 0.6rem 0rem;
+  border-radius: 5px;
+  margin-top: 2rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+#section1-button a{
+  padding: 0.6rem 2rem;
+}
+
+#section1-button a:hover {
+  color: var(--color-three);
+}
+
+/*------------------------------- Section2 Explore --------------------------------*/
+
+/*  */
+
+.carrossel{
+  box-shadow: 2px 2px 4px var(--color-three);
+  overflow: hidden;
+}
+
+.carrossel .container{
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0);
+}
+
+.carrossel .filters{
+  object-fit: cover;
+  width: 100%;
+}
+
+/*  */
+#explore {
+  padding-top: 5rem;
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  /* background-color: var(--backgroud-six); */
+}
+
+#explore img{
+  border: 2px solid var(--color-eight);
+  width: 100%;
+  box-shadow: 2px 2px 4px var(--color-three);
+}
+
+#explore ul li {
+  margin-bottom: 6rem;
+}
+
+#explore ul li h2 {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  margin-bottom: 3rem;
+}
+
+#explore ul li:first-child img {
+  margin-bottom: 3rem;
+}   
+
+#explore ul li p {
+  margin-bottom: 3rem;
+  font-size: clamp(0.9rem, 4vw, 1.4rem);
+  line-height: clamp(2.5rem, 9vw, 3rem);
+  color: var(--color-four);
+  text-align: justify;
+}
+
+#explore ul li:first-child p {
+  margin-bottom: 0;
+}
+
+#explore ul li h3 {
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  line-height: 2.8rem;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  color: var(--color-three);
+}
+
+#explore ul li:last-child h3{
+  line-height: 4rem;
+} 
+
+/*=============================================================================================================
+FOOTER
+=============================================================================================================*/
+
+.copyright,p,h3 {
+  color: var(--backgroud-six);
+}
+
+.filter {
+  background: var(--backgroud-two);
+}
+
+#footer {
+  background: url(img/iracema3.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  float: left; 
+  padding: 0; 
+  text-align: center;
+}
+
+#footer .filter{
+  position: relative;
+  text-align: center;
+  padding: 5px;
+}
+
+#footer #logo{
+  background: transparent;
+  color: var(--color-one);
+}
+
+#footer p{
+  font-size: clamp(1rem, 2vw, 1.4rem);
+}
+
+.social img:hover{
+  transform: scale(1.03);
+}
+
