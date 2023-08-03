@@ -269,7 +269,7 @@ CONTANT
   height: 100vh;
   object-fit: cover;
   transition: opacity 500ms;
-  filter: brightness(40%);
+  filter: brightness(45%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
