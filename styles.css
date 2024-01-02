@@ -23,12 +23,12 @@ a {
   color: var(--white);
   text-decoration: none;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s all ease-in-out !important;
 }
 
 a:hover {
   background: var(--backgroud-five);
-  transition: 0.3s;
+  transition: 0.3s all ease-in-out !important;
 }
 
 img {max-width: 100%;}
@@ -409,7 +409,7 @@ FOOTER
 }
 
 #footer {
-  background: url(img/iracema3.jpg) no-repeat;
+  background: url(img/iracema3.webp) no-repeat;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
