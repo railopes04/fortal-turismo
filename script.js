@@ -1,3 +1,10 @@
+//===============Efeito===============//
+
+document.addEventListener('DOMContentLoaded', function() {
+  window.sr = ScrollReveal({reset: true});
+  sr.reveal('.efeito-geral', {duration: 1500});
+  sr.reveal('#efeito-um', {duration: 3000});
+});
 
 //===============Script_do_scroll,rolagem===============//
 
@@ -107,5 +114,3 @@ function carrossel(){
 }
 
 setInterval(carrossel, 4000);
-
-
