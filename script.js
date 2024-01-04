@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   window.sr = ScrollReveal({reset: true});
   sr.reveal('.efeito-geral', {duration: 1500});
-  sr.reveal('#efeito-um', {duration: 3000});
+  sr.reveal('#efeito-um', {duration: 2000});
 });
 
 //===============Script_do_scroll,rolagem===============//
